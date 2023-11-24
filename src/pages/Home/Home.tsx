@@ -24,10 +24,10 @@ export function Home() {
           <span>0</span>
         </Styled.Countdowncontainer>
 
-        <button type="submit">
+        <Styled.StartCountdownButton type="submit">
           <Play size={24}/>
           Start
-        </button>
+        </Styled.StartCountdownButton>
       </form>
     </Styled.HomeContainer>
   )
