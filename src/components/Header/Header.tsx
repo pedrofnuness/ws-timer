@@ -5,9 +5,8 @@ import { Timer, Scroll } from 'phosphor-react'
 import * as Styled from './styles'
 import hatLogo from '../../assets/hat-logo.svg'
 
-type Props = {}
 
-export function Header({}: Props) {
+export function Header() {
   return (
     <Styled.HeaderContainer>
       <img src={hatLogo} alt="tourquise cowboy hat logo" />
