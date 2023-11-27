@@ -21,25 +21,33 @@ export function History() {
               <td>Task</td>
               <td>20 minutes</td>
               <td>1 week ago</td>
-              <td>Completed</td>
+              <td>
+                <Styled.Status statusColor="green">Completed</Styled.Status>
+              </td>
             </tr>
             <tr>
               <td>Task</td>
               <td>20 minutes</td>
               <td>1 week ago</td>
-              <td>Completed</td>
+              <td>
+                <Styled.Status statusColor="green">Completed</Styled.Status>
+              </td>
             </tr>
             <tr>
               <td>Task</td>
               <td>20 minutes</td>
               <td>1 week ago</td>
-              <td>Completed</td>
+              <td>
+                <Styled.Status statusColor="yellow">On going</Styled.Status>
+              </td>
             </tr>
             <tr>
               <td>Task</td>
               <td>20 minutes</td>
               <td>1 week ago</td>
-              <td>Completed</td>
+              <td>
+                <Styled.Status statusColor="red">Stopped</Styled.Status>
+              </td>
             </tr>
           </tbody>
         </table>
