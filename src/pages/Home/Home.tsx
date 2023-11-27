@@ -8,10 +8,15 @@ export function Home() {
       <form action="">
         <Styled.FormContainer>
           <label htmlFor="task">I will work on</label>
-          <input id="task" />
+          <Styled.TaskInput id="task" placeholder="Name your task" />
 
           <label htmlFor="minutesAmount">for</label>
-          <input type="number" id="minutesAmount" />
+          <Styled.MinutesAmountInput 
+            type="number" 
+            id="minutesAmount" 
+            placeholder="00"
+            step={5}
+          />
 
           <span>minutes.</span>
         </Styled.FormContainer>
@@ -24,7 +29,7 @@ export function Home() {
           <span>0</span>
         </Styled.Countdowncontainer>
 
-        <Styled.StartCountdownButton type="submit">
+        <Styled.StartCountdownButton disabled type="submit">
           <Play size={24}/>
           Start
         </Styled.StartCountdownButton>
