@@ -4,7 +4,6 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import * as zod from 'zod';
 
 import * as Styled from './styles';
-import { NewCycleFormData } from '../../@types';
 
 const newCycleFormValidationSchema = zod.object({
   task: zod.string().min(1, 'Enter the task'),
@@ -14,7 +13,7 @@ const newCycleFormValidationSchema = zod.object({
 type NewCycleFormData = zod.infer<typeof newCycleFormValidationSchema> 
 
 export function Home() {
-  const { register, handleSubmit, watch } = useForm<NewCycleFormData>({
+  const { register, handleSubmit, watch, reset } = useForm<NewCycleFormData>({
     resolver: zodResolver(newCycleFormValidationSchema),
     defaultValues: {
       task: '',
@@ -23,7 +22,7 @@ export function Home() {
   });
 
   function handleCreateNewCycle(data: NewCycleFormData) {
-    
+    reset();
   }
 
   const task = watch('task');
