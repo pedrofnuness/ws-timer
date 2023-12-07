@@ -20,38 +20,26 @@ export function History() {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Task</td>
-              <td>20 minutes</td>
-              <td>1 week ago</td>
-              <td>
-                <Styled.Status statusColor="green">Completed</Styled.Status>
-              </td>
-            </tr>
-            <tr>
-              <td>Task</td>
-              <td>20 minutes</td>
-              <td>1 week ago</td>
-              <td>
-                <Styled.Status statusColor="green">Completed</Styled.Status>
-              </td>
-            </tr>
-            <tr>
-              <td>Task</td>
-              <td>20 minutes</td>
-              <td>1 week ago</td>
-              <td>
-                <Styled.Status statusColor="yellow">On going</Styled.Status>
-              </td>
-            </tr>
-            <tr>
-              <td>Task</td>
-              <td>20 minutes</td>
-              <td>1 week ago</td>
-              <td>
-                <Styled.Status statusColor="red">Stopped</Styled.Status>
-              </td>
-            </tr>
+            {cycles.map(cycle => (
+              <tr key={cycle.id}>
+                <td>{cycle.task}</td>
+                <td>{cycle.minutesAmount} minutes</td>
+                <td>{cycle.startDate.toISOString()}</td>
+                <td>
+                  {cycle.finishedDate && (
+                    <Styled.Status statusColor="green">Completed</Styled.Status>
+                  )}
+
+                  {cycle.interruptedDate && (
+                    <Styled.Status statusColor="red">Interrupted</Styled.Status>
+                  )}
+
+                  {!cycle.finishedDate && !cycle.interruptedDate && (
+                    <Styled.Status statusColor="yellow">On going</Styled.Status>
+                  )}
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </Styled.HistoryList>
